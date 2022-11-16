@@ -8,7 +8,7 @@ function Hero() {
             <div>
 
 
-                <section className="mb-40">
+                <section className="mb-10">
 
 
                     {/* <div className="text-center bg-gray-50 text-gray-800 py-24 px-6">
