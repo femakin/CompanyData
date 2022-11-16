@@ -1,5 +1,6 @@
 import React from "react";
 import Category from "../components/Category";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import SearchInput from "../components/SearchInput";
@@ -26,9 +27,7 @@ function Home() {
            <Category/>
           </div>
         </main>
-        <footer>
-          <h1>Footer</h1>
-        </footer>
+       <Footer/>
       </div>
     </div>
   );
