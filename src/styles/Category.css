@@ -1,0 +1,13 @@
+.category_home{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.category_content{
+    border: 1px solid lightblue;
+    padding: 10px;
+    background: #F9FAFB;
+    color: #2563EB;
+}
