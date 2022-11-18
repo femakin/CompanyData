@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import config from "../config";
 import "../styles/Category.css";
+import { Link } from "react-router-dom";
 
 function Category() {
+  let [categories, setCategories] = useState([]);
   const data = [
     {
       name: "Sport",
@@ -69,16 +72,30 @@ function Category() {
     },
   ];
 
+
+  useEffect(() => {
+    const getCategories = async () => {
+      let categories = await fetch(`${config.BASE_URL}/socialgroup`).then(r => r.json());
+      setCategories(categories);
+      console.log(categories, 'categoriesss')
+    }
+
+    getCategories();
+  }, []);
+
+
+
+
+
   return (
     <div>
       <section className="">
         <div className="category_home ">
-          {data.map((x, i) => {
+          {categories.map((x, i) => {
             return (
               <div className=" category_content">
-                <h1>
-                  {x.name} {x.count}
-                </h1>
+                <Link className="categ-link" to={`/category/${x._id}`}>  {x._id} {x.count}</Link>
+
               </div>
             );
           })}

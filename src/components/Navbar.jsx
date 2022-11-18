@@ -5,10 +5,10 @@ import { CgProfile } from "react-icons/cg";
 import SearchInput from "./SearchInput";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Search", href: "#", current: false },
-  { name: "Blog", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
+  { name: "Search", href: "/", current: false },
+  { name: "Blog", href: "/", current: false },
+  { name: "Contact", href: "/", current: false },
   // { name: 'Calendar', href: '#', current: false },
 ];
 
@@ -18,7 +18,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className=" bg-blue-800 ">
+    <Disclosure as="nav" className=" bg-[#2563EB]">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -84,7 +84,7 @@ export default function Navbar() {
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
                       /> */}
-                      <CgProfile className="h-8 w-8 rounded-full"  color="white" />
+                      <CgProfile className="h-8 w-8 rounded-full" color="white" />
                     </Menu.Button>
                   </div>
                   <Transition

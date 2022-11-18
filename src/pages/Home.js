@@ -6,8 +6,10 @@ import Hero from "../components/Hero";
 import SearchInput from "../components/SearchInput";
 import "../index.css";
 
+
 function Home() {
   return (
+
     <div className="home_container">
       <div className="App container-fluid">
         <header className="App-header">
@@ -24,10 +26,10 @@ function Home() {
 
           <div className="category_container">
             {/* <h1>Main Body</h1> */}
-           <Category/>
+            <Category />
           </div>
         </main>
-       <Footer/>
+        <Footer />
       </div>
     </div>
   );
