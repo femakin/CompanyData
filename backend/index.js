@@ -47,14 +47,7 @@ const log = (route, message) => {
     console.log(log);
 }
 
-app.get("/", async (req, res) => {
-    log("/", "GET request");
-    // res.send({ status: "Ok", dbConnected }).status(200);
-    // results = await itemCollection.find({})
-    results = await itemCollection.find({}).toArray();
-    res.send(results).status(200);
-    // res.status(200).json(results)
-});
+
 
 
 app.get("/socialgroup", async (req, res) => {
@@ -100,6 +93,7 @@ app.get("/items/category/:category", async (req, res) => {
     log("/items/category/:category", `GET request with parameter ${req.params.category}`);
     let results = [];
     try {
+        // results = await itemCollection.find({ category_code: req.params.category }).limit(24).toArray();
         results = await itemCollection.find({ category_code: req.params.category }).limit(24).toArray();
 
 
