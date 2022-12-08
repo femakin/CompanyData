@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import config from "../config";
 import "../styles/Category.css";
 import { Link } from "react-router-dom";
+import SearchInput from "./SearchInput";
 
 function Category() {
   let [categories, setCategories] = useState([]);
@@ -77,7 +78,7 @@ function Category() {
     const getCategories = async () => {
       let categories = await fetch(`${config.BASE_URL}/socialgroup`).then(r => r.json());
       setCategories(categories);
-      console.log(categories, 'categoriesss')
+      // console.log(categories, 'categoriesss')
     }
 
     getCategories();
@@ -89,6 +90,7 @@ function Category() {
 
   return (
     <div>
+      <SearchInput />
       <section className="">
         <div className="category_home ">
           {categories.map((x, i) => {

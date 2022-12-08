@@ -17,7 +17,7 @@ function Home() {
         </header>
         <main>
           <div className="searchcontainer">
-            <SearchInput />
+
           </div>
           <div className="row justify-content-center">
             {/* <h1>Main Body</h1> */}

@@ -1,0 +1,24 @@
+.form_bdy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* width: 100%;
+    max-width: 400px; */
+    /* justify-content: space-between; */
+}
+
+
+.form_one {
+    /* border: 1px solid #ffffff; */
+    /* padding: 3px;
+    text-indent: 2px; */
+}
+
+.form_bdy>.form_one {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    cursor: pointer;
+}

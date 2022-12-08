@@ -75,7 +75,7 @@ app.get("/socialgroup", async (req, res) => {
                 }
             }
         ]).toArray();
-        console.log(results[0], 'resultsss')
+        // console.log(results[0], 'resultsss')
     } catch (e) {
         log("/socialgroup", e.toString());
     }
@@ -97,9 +97,74 @@ app.get("/items/category/:category", async (req, res) => {
         results = await itemCollection.find({ category_code: req.params.category }).limit(24).toArray();
 
 
-        console.log(results, 'find dataaaaa')
+        // console.log(results, 'find dataaaaa')
     } catch (e) {
         log(`/items/category/${req.params.category}`, e.toString());
+    }
+    res.send(results).status(200);
+});
+
+
+
+app.get("/search/:query", async (req, res) => {
+    log("/search", `GET request with param ${req.params.query}`);
+    let results = [];
+    try {
+        /** TODO: Update this to use Atlas Search */
+        results = await itemCollection.aggregate([
+            {
+                $search: {
+                    index: 'default',
+                    text: {
+                        query: req.params.query,
+                        path: ["name", "description", "homepage_url", "category_code", "permalink", "twitter_username"]
+                    }
+                }
+            }
+        ]).toArray();
+        /** End */
+    }
+    catch (e) {
+        log("/search", e.toString());
+    }
+    res.send(results).status(200);
+});
+
+
+app.get("/autocomplete/:query", async (req, res) => {
+    log("/autocomplete", `GET request with param ${req.params.query}`);
+    let results = [];
+    try {
+        // TODO: Insert the functionality here
+        results = await itemCollection.aggregate([
+            {
+                '$search': {
+                    'index': 'autocomplete',
+                    'autocomplete': {
+                        'query': req.params.query,
+                        'path': 'name'
+                    },
+                    'highlight': {
+                        'path': [
+                            'name'
+                        ]
+                    }
+                }
+            }, {
+                '$limit': 5
+            }, {
+                '$project': {
+                    'name': 1,
+                    'highlights': {
+                        '$meta': 'searchHighlights'
+                    }
+                }
+            }
+        ]).toArray();
+        /** End */
+    }
+    catch (e) {
+        log("/search", e.toString());
     }
     res.send(results).status(200);
 });

@@ -18,7 +18,7 @@ function ProductPage() {
         const getItems = async () => {
             let items = await fetch(`${config.BASE_URL}/items/category/${category}`).then(r => r.json());
             setItems(items);
-            console.log(items, 'itemmmmms')
+
         }
         getItems();
     }, [category]);
@@ -34,13 +34,12 @@ function ProductPage() {
                         <SearchInput />
                     </div>
                     <div className="row justify-content-center">
-                        {/* <h1>Main Body</h1> */}
+
                         <Hero />
                     </div>
 
                     <div className="category_container">
-                        {/* <h1>Main Body</h1> */}
-                        {/* <Category /> */}
+
                         <ProductIccon item={items} />
                     </div>
                 </main>
