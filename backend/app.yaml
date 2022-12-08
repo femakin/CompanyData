@@ -1,0 +1,3 @@
+env_variables:
+  PORT: "8000"
+  MONGODB_URI: "mongodb+srv://femi:Z1FuBiJ2agRYnfEj@atlaslearningproject.eirpp0q.mongodb.net/?retryWrites=true&w=majority"
