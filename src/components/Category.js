@@ -90,7 +90,7 @@ function Category() {
 
   return (
     <div>
-      <SearchInput />
+      {/* <SearchInput /> */}
       <section className="">
         <div className="category_home ">
           {categories.map((x, i) => {

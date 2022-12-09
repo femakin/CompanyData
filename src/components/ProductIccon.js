@@ -12,9 +12,9 @@ function ProductIccon({ item }) {
 
 
         <>
-            <div className="searchcontainer">
+            {/* <div className="searchcontainer">
                 <SearchInput />
-            </div>
+            </div> */}
 
             <div>
 

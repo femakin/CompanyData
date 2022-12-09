@@ -40,9 +40,9 @@ function SearchInput() {
         setDataL(result, 'resultttt twoooo')
         setUsers(e?.target?.value)
         // console.log(query, 'query')
-        navigate(`/search/${query}`, {
-            state: query
-        });
+        // navigate(`/search/${query}`, {
+        //     state: query
+        // });
     }
 
 
@@ -71,7 +71,7 @@ function SearchInput() {
                         <datalist id="datalistOptions">
                             {suggestions?.map((s, index) => {
                                 return (
-                                    <select   >
+                                    <select>
                                         <option key={index} value={s.name} />
                                     </select>
 
